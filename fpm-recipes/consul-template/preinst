@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+# Remove the symlink if it exists.
+if [ -L /usr/local/bin/consul-template ]; then
+  rm -f /usr/local/bin/consul-template
+fi
+
+exit 0
