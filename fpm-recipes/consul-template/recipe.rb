@@ -2,7 +2,7 @@ class ConsulTemplate < FPM::Cookery::Recipe
   name 'consul-template'
 
   version '0.7.0'
-  revision '1'
+  revision '2'
   description 'Generic template rendering and notifications with Consul.'
 
   homepage 'https://github.com/hashicorp/consul-template'
