@@ -15,6 +15,10 @@ build:
           cd fpm-recipes/consul-template
           sudo fpm-cook install-deps
           sudo fpm-cook
+  after-steps:
+      - wantedly/pretty-slack-notify:
+          webhook_url: $SLACK_WEBHOOK_URL
+
 deploy:
   steps:
     - script:
@@ -24,3 +28,6 @@ deploy:
           PACKAGECLOUD=$(eval echo "\$PACKAGECLOUD_TOKEN") && echo -e "$PACKAGECLOUD" > ~/.packagecloud && chmod 600 ~/.packagecloud
           DEB_FILE=$(find . -name '*.deb') && package_cloud push darron/consul-template/ubuntu/trusty $DEB_FILE
           DEB_FILE=$(find . -name '*.deb') && package_cloud push darron/octohost/ubuntu/trusty $DEB_FILE
+  after-steps:
+      - wantedly/pretty-slack-notify:
+          webhook_url: $SLACK_WEBHOOK_URL
