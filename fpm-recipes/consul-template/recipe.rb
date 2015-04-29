@@ -1,13 +1,13 @@
 class ConsulTemplate < FPM::Cookery::Recipe
   name 'consul-template'
 
-  version '0.8.0'
+  version '0.9.0'
   revision '1'
   description 'Generic template rendering and notifications with Consul.'
 
   homepage 'https://github.com/hashicorp/consul-template'
   source "https://github.com/hashicorp/consul-template/releases/download/v#{version}/consul-template_#{version}_linux_amd64.tar.gz"
-  sha256 '5a65c8df7ecfe2fbdedcac71743732a1c4e810987e294e7d733f2da39c2ebf17'
+  sha256 '3d8c9fcaee18a4369cc731528ce9d6a5be03d88b954a2fea0f4406fc54c70fc8'
 
   maintainer 'Darron Froese <darron@froese.org>'
   vendor 'octohost'
